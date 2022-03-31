@@ -14,5 +14,5 @@ rule other_sample_plot:
         "results/logs/other_sample_plot.{sample}.log",
     shell:
         """
-        python {input.script} --condition {params.condition} --output {output} > {log}
+        python {input.script} --condition {params.condition} --output {output} &> {log}
         """
