@@ -10,9 +10,7 @@ rule other_sample_plot:
         report("results/plots/{sample}.png", caption="../report/some-plot.rst"),
     params:
         condition=lambda wc: samples.loc[wc.sample].condition,
-    log:
-        "results/logs/other_sample_plot.{sample}.log",
     shell:
         """
-        python {input.script} --condition {params.condition} --output {output} > {log}
+        python {input.script} --condition {params.condition} --output {output}
         """
